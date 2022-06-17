@@ -23,7 +23,6 @@ public with sharing class OSF_CheckWeatherExtention {
     public decimal temp{get; set;}
     public String description{get; set;}
     public String icon{get; set;}
-    
     public OSF_CheckWeatherExtention(ApexPages.StandardController stdController) {
         try {
             Account account = (Account)stdController.getRecord();
