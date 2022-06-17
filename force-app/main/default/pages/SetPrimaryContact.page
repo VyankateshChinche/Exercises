@@ -1,0 +1,69 @@
+<apex:page standardController="Account" extensions="OSFAccountExtention">
+    <apex:form id="refd">
+        <!-- Inseart Account -->
+        <apex:pageBlock title="Account Primary Contact">
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Account.Name}"/>
+                <apex:inputField value="{!Account.AccountNumber}"/>
+                <apex:inputField value="{!Account.Type}"/>
+                <apex:inputField value="{!Account.Active__c}"/>
+                <apex:inputField value="{!Account.Phone}"/>
+                <apex:inputField value="{!Account.Fax}"/>
+            </apex:pageBlockSection>
+            <apex:pageblockButtons >
+                <apex:commandButton value="save" action="{!save}"/>
+                <apex:commandButton value="cancel" action="{!cancel}"/>
+            </apex:pageblockButtons> 
+        </apex:pageBlock>
+        
+        <!-- Search Account Related Contacts -->
+        <apex:pageBlock title="Search Related Contacts">
+            <apex:inputText value="{!searchString}" label="Search" />
+            <apex:commandButton value="Search" action="{!searchContact}" ></apex:commandButton>
+        </apex:pageBlock>
+        
+        <!--Account Related Contacts List -->
+        <apex:pageBlock title="Related Contacts">
+            <apex:pageBlockTable value="{!conList}" var="r">
+                <apex:column >
+                    <apex:outputField value="{!r.Name}" />
+                    <apex:facet name="header">Name</apex:facet>
+                </apex:column>
+                <apex:column >
+                    <apex:outputField value="{!r.AccountId}" />
+                    <apex:facet name="header">AccountName</apex:facet>
+                </apex:column>
+                <apex:column >
+                    <apex:outputField value="{!r.Title}" />
+                    <apex:facet name="header">Title</apex:facet>
+                </apex:column>
+                <apex:column >
+                    <apex:outputField value="{!r.Phone}" />
+                    <apex:facet name="header">Phone</apex:facet>
+                </apex:column>
+                <apex:column >
+                    <apex:outputField value="{!r.Is_Primary_Contact__c}" />
+                    <apex:facet name="header">Is Primary Contact</apex:facet>
+                </apex:column>
+                <apex:column >
+                    <apex:commandLink rendered="{!IF(r.Is_Primary_Contact__c =false,true,false)}" value="SetAsPrimary" onclick="PrimaryContact('{!r.Id}')" />
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+        
+        <script>
+        function PrimaryContact(primaryContact){
+            alert("This Contact will be Primary Contact.");
+            ContactId(primaryContact);
+            location.reload(true);
+            function refreshPage(){
+                window.location.reload(true);
+            }
+        }
+        </script>
+        <apex:actionFunction action="{!setContactAsPrimary}" name="ContactId" oncomplete="refreshPage();" reRender="refd">
+            <apex:param value="" name="conId" id="conids"/>
+        </apex:actionFunction>
+    </apex:form>
+    
+</apex:page>
