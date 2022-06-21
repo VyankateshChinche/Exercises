@@ -14,9 +14,10 @@ global with sharing class OSF_OpportunitySummarizeScheduler implements schedulab
 * @Description  : Schedule Job
 * @Created By   : Vyankatesh Chinche
 * @Created Date : Jun 09, 2022
+* @Param sc SchedulableContext  Schedulable Context 
 *******************************************************************************/
     global void execute(SchedulableContext sc) {
         OSF_OpportunitySummarizeBatchClass b = new OSF_OpportunitySummarizeBatchClass ();
         database.executebatch(b);
-    } 
+     } 
 }

@@ -1,17 +1,12 @@
 <apex:page standardController="Account" extensions="OSF_CheckWeatherExtention">
     <apex:form >
         <!-- Show the weather of the associated City -->
-        <apex:pageBlock title="Weather In Portland :">
+        <apex:pageBlock title="{!title}">
             <apex:pageBlockSection >
                 <apex:outputText label="Description" value="{!description}"/>
                 <apex:outputText label="Temperature" value="{!temp}"/>
                 <apex:image value="{!icon}"/>
             </apex:pageBlockSection>
-            <apex:commandButton value="Edit" action="{!save}"/>&nbsp;&nbsp;
-            <apex:commandButton value="Delete" action="{!cancel}"/>&nbsp;&nbsp;
-            <apex:commandButton value="Include Offline" action="{!cancel}"/>&nbsp;&nbsp;
-            <apex:commandButton value="Manage External Account" action="{!cancel}"/>&nbsp;&nbsp;
-            <apex:commandButton value="Set Primary Contact" action="{!cancel}"/>
-        </apex:pageBlock>
+         </apex:pageBlock>
     </apex:form>
 </apex:page>

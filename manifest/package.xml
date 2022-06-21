@@ -7,8 +7,8 @@
         <members>OSF_OpportunitySummarizeBatchClass</members>
         <members>OSF_OpportunitySummarizeScheduler</members>
         <members>OSFAccountExtention_Test</members>
-        <members></members>
-        <name>ApexClass</name>
+        <members>OSF_OpportunitySummarize_TestClass</members>
+       <name>ApexClass</name>
     </types>
     <types>
         <members>SetPrimaryContact</members>

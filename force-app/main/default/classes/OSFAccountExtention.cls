@@ -28,7 +28,7 @@ public with sharing class OSFAccountExtention {
             System.debug('The exception has occurred: ' + e.getMessage());
         }   
     }
-    /***************************************************************************
+/*******************************************************************************
 * @Name         : searchContact
 * @Description  : Search account related Contact as per search string
 * @Created By   : Vyankatesh Chinche
@@ -52,7 +52,7 @@ public with sharing class OSFAccountExtention {
             System.debug('The exception has occurred: ' + e.getMessage());
         }
     }
-    /***************************************************************************
+/*******************************************************************************
 * @Name         : setContactAsPrimary
 * @Description  : Selected contact from Contact list will be set as primary and
 all the other contacts will be secondary.
