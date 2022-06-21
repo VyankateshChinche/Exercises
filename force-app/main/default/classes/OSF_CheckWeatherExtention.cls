@@ -19,7 +19,7 @@ public with sharing class OSF_CheckWeatherExtention {
     public static final String Icon_Url = 'http://openweathermap.org/img/wn/';
     public static final String Icon_Png = '.png';
     public static final String Title_String = 'Weather In: ';
-    public decimal temp{get; set;}
+    public Decimal temp{get; set;}
     public String description{get; set;}
     public String icon{get; set;}
     public String title{get; set;}

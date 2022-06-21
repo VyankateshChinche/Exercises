@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Primary_contact_validation</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Primary contact validation</shortDescription>
+        <value>There is primary contact that already exit.</value>
+    </labels>
+    <labels>
+        <fullName>SubTitle</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Mail sub title</shortDescription>
+        <value>Below is a table of opportunities related to the account:</value>
+    </labels>
+    <labels>
+        <fullName>Table_Header</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Table Header</shortDescription>
+        <value>.&lt;br/&gt;&lt;br/&gt;&lt;table border=&quot;1&quot; style=&quot;border-collapse: collapse&quot;&gt;&lt;tr&gt;&lt;th&gt;Account&lt;/th&gt;&lt;th&gt;Stage&lt;/th&gt;&lt;th&gt;Amount&lt;/th&gt;&lt;/tr&gt;</value>
+    </labels>
+    <labels>
+        <fullName>TitleString</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Mail Subject</shortDescription>
+        <value>SUMMARIZE OPPORTUNITY AMOUNT</value>
+    </labels>
+</CustomLabels>
