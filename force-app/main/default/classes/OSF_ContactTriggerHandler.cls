@@ -9,14 +9,13 @@
 * 
 *******************************************************************************/
 public with sharing class OSF_ContactTriggerHandler {
-    /***************************************************************************
+/*******************************************************************************
 * @Name         : validatePrimaryContactOnAccount
 * @Description  :If the Account already has a Primary Contact set a new one cannot be added.
 * @Created By   : Vyankatesh Chinche
 * @Created Date : May 19, 2022 
 * @newcontact  List<Contact>  List of new Contact
 * @oldMapContact Map<Id,Contact> Map of Id and Contact
-
 *******************************************************************************/
     public static void validatePrimaryContactOnAccount (List<Contact> newcontact, Map<Id,Contact> oldMapContact) {
         try {
@@ -43,14 +42,13 @@ public with sharing class OSF_ContactTriggerHandler {
             System.debug('The following exception has occurred: ' + e.getMessage());
         }
     }
-    /***************************************************************************
+/*******************************************************************************
 * @Name         : updatePrimaryContactPhoneOnAccount
 * @Description  : Primary Contact Phone will update to all Non Primary contacts related to the same account.
 * @Created By   : Vyankatesh Chinche
 * @Created Date : May 20, 2022 
 * @newcontact2   List<Contact>  List of new Contact
 * @oldMapContact2  Map<Id,Contact>  Map of Id and Contact
-
 *******************************************************************************/
     @future 
     public static void updatePrimaryContactPhoneOnAccount(Set<Id> accIds) {
