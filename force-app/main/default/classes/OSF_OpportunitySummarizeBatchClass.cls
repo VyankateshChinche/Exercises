@@ -30,7 +30,7 @@ global with sharing class OSF_OpportunitySummarizeBatchClass implements Database
     }
     /******************************************************************************
 * @Name         : execute
-* @Description  : Summarize Opportunity as Open,Close Won and Close Lost
+* @Description  : Summarize Opportunity as Open, Close Won and Close Lost
 * @Created By   : Vyankatesh Chinche
 * @Created Date : Jun 09, 2022
 * @Param  scope List<Contact> store List of Contacts.
@@ -68,7 +68,7 @@ global with sharing class OSF_OpportunitySummarizeBatchClass implements Database
     }
     /*******************************************************************************
 * @Name         : finish
-* @Description  : execute post-processing operations.
+* @Description  : Send email to Account Primary Contact.
 * @Created By   : Vyankatesh Chinche
 * @Created Date : Jun 09, 2022
 * @Param   bc Database.BatchableContext store Database BatchableContext.
@@ -83,7 +83,7 @@ global with sharing class OSF_OpportunitySummarizeBatchClass implements Database
                                  WHERE Is_Primary_Contact__c = true];
         for(Contact c : conList){
             for ( Id aID : mapOfOpenStage.keySet() ) {
-                if(mapOfOpenStage.get(c.Id) == 0){
+                if(mapOfOpenStage.get(c.Id) == 0) {
                     openAmountMail = '';
                 } else {
                     openAmountMail = String.valueOf(mapOfOpenStage.get(c.Id));

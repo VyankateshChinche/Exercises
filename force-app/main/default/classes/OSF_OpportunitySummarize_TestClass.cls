@@ -19,7 +19,9 @@ public class OSF_OpportunitySummarize_TestClass {
 * @Param  
 *******************************************************************************/
     static testMethod void testMethod1() {
-        List<Contact> accList = [SELECT Id, Name, Account.Name, AccountId FROM Contact WHERE Is_Primary_Contact__c = true];
+        List<Contact> accList = [SELECT Id, Name, Account.Name, AccountId
+                                 FROM Contact
+                                 WHERE Is_Primary_Contact__c = true];
         Account a = new Account(Name = 'TestAcc');
         insert a;
         Account a2 = new Account( Name = 'TestAcc2');
