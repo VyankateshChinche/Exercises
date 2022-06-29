@@ -8,6 +8,7 @@
         <members>OSF_OpportunitySummarizeScheduler</members>
         <members>OSFAccountExtention_Test</members>
         <members>OSF_OpportunitySummarize_TestClass</members>
+        <members>CityWeatherCondition_ExtensionClass</members>
        <name>ApexClass</name>
     </types>
     <types>
