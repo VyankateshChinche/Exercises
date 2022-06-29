@@ -1,4 +1,4 @@
-<apex:page standardController="Account" extensions="CityWeatherCondition_ExtensionClass">
+<apex:page standardController="Account" extensions="OSF_CityWeatherConditionExtensionClass">
     <apex:form >
         <!-- Show the weather of the associated City -->
         <apex:pageBlock title="{!title}">

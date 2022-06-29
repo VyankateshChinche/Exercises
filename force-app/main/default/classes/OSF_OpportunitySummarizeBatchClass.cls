@@ -9,11 +9,11 @@
 *                                                       
 *******************************************************************************/
 global with sharing class OSF_OpportunitySummarizeBatchClass implements Database.Batchable<sObject>,Database.Stateful,Schedulable {
-    public static final String Opp_Open = 'Open';
-    public static final String Opp_CloseWon = 'Closed Won';
-    public static final String Opp_CloseLost = 'Closed Lost';
-    public static final String Opp_Amount = 'amt';
-    public static final String Stage_Name = 'StageName';
+    public static final String OPP_OPEN = 'Open';
+    public static final String OPP_CLOSEWON = 'Closed Won';
+    public static final String OPP_CLOSELOST = 'Closed Lost';
+    public static final String OPP_AMOUNT = 'amt';
+    public static final String STAGE_NAME = 'StageName';
     Map<Id, Decimal> mapOfOpenStage = new Map<Id,Decimal>();
     Map<Id, Decimal> mapOfCloseWon = new Map<Id,Decimal>();
     Map<Id, Decimal> mapOfCloseLost = new Map<Id,Decimal>();
@@ -45,14 +45,14 @@ global with sharing class OSF_OpportunitySummarizeBatchClass implements Database
                                                  FROM Opportunity
                                                  WHERE AccountId =: con.AccountId GROUP BY StageName];
                 for (AggregateResult agr : agrOpen) {
-                    if (agr.get(Stage_Name) != Opp_CloseWon && agr.get(Stage_Name)  != Opp_CloseLost ) {
-                        open += (Decimal)agr.get(Opp_Amount);
+                    if (agr.get(Stage_Name) != OPP_CLOSEWON && agr.get(Stage_Name)  != OPP_CLOSELOST ) {
+                        open += (Decimal)agr.get(OPP_AMOUNT);
                     }
-                    if (agr.get(Stage_Name) == Opp_CloseWon) {
-                        closeWon = (Decimal)agr.get(Opp_Amount);
+                    if (agr.get(Stage_Name) == OPP_CLOSEWON) {
+                        closeWon = (Decimal)agr.get(OPP_AMOUNT);
                     }
-                    if (agr.get(Stage_Name) == Opp_CloseLost) {
-                        closedLost = (Decimal)agr.get(Opp_Amount);
+                    if (agr.get(Stage_Name) == OPP_CLOSELOST) {
+                        closedLost = (Decimal)agr.get(OPP_AMOUNT);
                     }
                 }
                 mapOfOpenStage.put(con.Id, open);
@@ -105,9 +105,9 @@ global with sharing class OSF_OpportunitySummarizeBatchClass implements Database
             mail.setTargetObjectId(c.Id);
             mail.setSubject(Label.TitleString);
             String body =  Label.SubTitle+accountName+Label.Table_Header;
-            body += '<tr><td>' + accountName + '</td><td>' + Opp_Open + '</td><td>' + openAmountMail + '</td></tr>';
-            body += '<tr><td>' + accountName + '</td><td>' + Opp_CloseWon + '</td><td>' + closeWonAmountMail + '</td></tr>';
-            body += '<tr><td>' + accountName + '</td><td>' + Opp_CloseLost + '</td><td>' + closeLostAmountMail + '</td></tr>';
+            body += '<tr><td>' + accountName + '</td><td>' + OPP_OPEN + '</td><td>' + openAmountMail + '</td></tr>';
+            body += '<tr><td>' + accountName + '</td><td>' + OPP_CLOSEWON + '</td><td>' + closeWonAmountMail + '</td></tr>';
+            body += '<tr><td>' + accountName + '</td><td>' + OPP_CLOSELOST + '</td><td>' + closeLostAmountMail + '</td></tr>';
             body += '</table>';
             mail.setHtmlBody(body);
             mails.add(mail);

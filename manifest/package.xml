@@ -2,14 +2,13 @@
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
    <types>
         <members>OSFAccountExtention</members>
-        <members>OSF_CheckWeatherExtention</members>
+        <members>OSF_CityWeatherConditionExtensionClass</members>
         <members>OSF_ContactTriggerHandler</members>
         <members>OSF_OpportunitySummarizeBatchClass</members>
         <members>OSF_OpportunitySummarizeScheduler</members>
         <members>OSFAccountExtention_Test</members>
-        <members>OSF_OpportunitySummarize_TestClass</members>
-        <members>CityWeatherCondition_ExtensionClass</members>
-       <name>ApexClass</name>
+        <members>OSF_OpportunitySummarizeTestClass</members>
+        <name>ApexClass</name>
     </types>
     <types>
         <members>SetPrimaryContact</members>
