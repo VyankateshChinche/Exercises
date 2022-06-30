@@ -1,14 +1,14 @@
-/*******************************************************************************
-* @Name         : OSF_CityWeatherConditionExtensionClass
-* @Description  : Get the weather information of the associated City
-* @Created By   : Vyankatesh Chinche
-* @Created Date : Jun 14, 2022
-* @Modification Log :
-********************************************************************************
-* Version      Developer                Date        Description
-*                                                       
-*******************************************************************************/
-public with sharing class OSF_CityWeatherConditionExtensionClass {
+    /***************************************************************************
+    *@Name         : OSF_CityWeatherConditionExtensionClass
+    *@Description  : Get the weather information of the associated City
+    *@Created By   : Vyankatesh Chinche
+    *@Created Date : Jun 14, 2022
+    *@Modification Log :
+    ****************************************************************************
+    * Version      Developer                Date        Description
+    *                                                       
+    ***************************************************************************/
+    public with sharing class OSF_CityWeatherConditionExtensionClass {
     public static final String ACC_CITY = '?q='; 
     public static final String UNIT_METRIC = '&units=metric';
     public static final String APP_ID = '&APPID=';
@@ -66,4 +66,4 @@ public with sharing class OSF_CityWeatherConditionExtensionClass {
     class cls_main {
         public Decimal temp;
     }
-}
+    }

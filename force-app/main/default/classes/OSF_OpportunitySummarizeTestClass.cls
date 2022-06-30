@@ -1,24 +1,24 @@
-/*******************************************************************************
-* @Name         : OSF_OpportunitySummarizeTestClass
-* @Description  : Testing OSF_OpportunitySummarizeBatchClass class code coverage.
-* @Created By   : Vyankatesh Chinche
-* @Created Date : Jun 09, 2022
-* @Modification Log :
-********************************************************************************
-* Version      Developer                Date        Description
-*                                                       
-*******************************************************************************/
-@isTest
-public class OSF_OpportunitySummarizeTestClass {
+    /***************************************************************************
+    * @Name         : OSF_OpportunitySummarizeTestClass
+    * @Description  : Testing OSF_OpportunitySummarizeBatchClass class code coverage.
+    * @Created By   : Vyankatesh Chinche
+    * @Created Date : Jun 09, 2022
+    * @Modification Log :
+    ****************************************************************************
+    * Version      Developer                Date        Description
+    *                                                       
+    ***************************************************************************/
+    @isTest
+    public class OSF_OpportunitySummarizeTestClass {
     
-    /*******************************************************************************
-* @Name         : testMethod1
-* @Description  : Test OSF_OpportunitySummarizeBatchClass Batch class
-* @Created By   : Vyankatesh Chinche
-* @Created Date : Jun 09, 2022
-* @Param  
-*******************************************************************************/
-    static testMethod void testMethod1() {
+    /***************************************************************************
+    * @Name         : testMethod1
+    * @Description  : Test OSF_OpportunitySummarizeBatchClass Batch class
+    * @Created By   : Vyankatesh Chinche
+    * @Created Date : Jun 09, 2022
+    * @Param  
+    ***************************************************************************/
+        static testMethod void testMethod1() {
         List<Contact> accList = [SELECT Id, Name, Account.Name, AccountId
                                  FROM Contact
                                  WHERE Is_Primary_Contact__c = true];
@@ -67,4 +67,4 @@ public class OSF_OpportunitySummarizeTestClass {
         database.executebatch(b);
         Test.StopTest();
     }
-}
+    }
