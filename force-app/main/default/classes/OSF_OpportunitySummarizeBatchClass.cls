@@ -90,7 +90,7 @@
                     if (mapOfOpenStage.get(c.Id) == 0) {
                         openAmountMail = '';
                     } else {
-                    openAmountMail = String.valueOf(mapOfOpenStage.get(c.Id));
+                        openAmountMail = String.valueOf(mapOfOpenStage.get(c.Id));
                     }
                     if (mapOfCloseWon.get(c.Id) == null) {
                         closeWonAmountMail = '';
@@ -98,7 +98,7 @@
                         closeWonAmountMail = String.valueOf(mapOfCloseWon.get(c.Id));
                     }
                     if (mapOfCloseLost.get(c.Id) == null) {
-                    closeLostAmountMail = '';
+                        closeLostAmountMail = '';
                     } else {
                         closeLostAmountMail = String.valueOf(mapOfCloseLost.get(c.Id));
                     }
@@ -125,7 +125,6 @@
     * @Created Date : Jun 09, 2022
     * @Param  SC   SchedulableContext  store Schedulable Context.
     ***************************************************************************/
-    global void execute(SchedulableContext SC) {
-    } 
-    
+        global void execute(SchedulableContext SC) {
+        } 
     }
