@@ -20,13 +20,13 @@ global with sharing class OSF_OpportunitySummarizeBatchClass implements Database
     String openAmount;
     String closeWonAmount;
     String closeLostAmount;
-    /***************************************************************************
-	* @Name         : start
-	* @Description  : Retrive Contact data from  database.
-	* @Created By   : Vyankatesh Chinche
-	* @Created Date : Jun 09, 2022
-	* @Param  bc   Database.BatchableContext  Database BatchableContext.
-	***************************************************************************/
+        /***********************************************************************
+	    * @Name         : start
+	    * @Description  : Retrive Contact data from  database.
+	    * @Created By   : Vyankatesh Chinche
+	    * @Created Date : Jun 09, 2022
+	    * @Param  bc   Database.BatchableContext  Database BatchableContext.
+	    ***************************************************************************/
     global Database.Querylocator start(Database.BatchableContext bc) {
         String Query = 'SELECT Id, Name, Account.Name, AccountId FROM Contact WHERE Is_Primary_Contact__c = true';
         return Database.getQuerylocator(Query);
