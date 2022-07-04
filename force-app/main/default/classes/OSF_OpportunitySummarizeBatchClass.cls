@@ -6,7 +6,8 @@
 * @Modification Log :
 ********************************************************************************
 * Version      Developer                Date        Description
-*                                                       
+* ------------------------------------------------------------------------------
+*                                                      
 *******************************************************************************/
 global with sharing class OSF_OpportunitySummarizeBatchClass implements Database.Batchable<sObject>,Database.Stateful,Schedulable {
     public static final String OPP_OPEN = 'Open';
