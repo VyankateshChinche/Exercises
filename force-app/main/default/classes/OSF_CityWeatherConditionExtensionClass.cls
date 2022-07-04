@@ -6,7 +6,8 @@
 	*@Modification Log :
 	****************************************************************************
 	* Version      Developer                Date        Description
-	*                                                       
+	*---------------------------------------------------------------------------
+    *                                                       
 	***************************************************************************/
 public with sharing class OSF_CityWeatherConditionExtensionClass {
     public static final String ACC_CITY = '?q='; 
