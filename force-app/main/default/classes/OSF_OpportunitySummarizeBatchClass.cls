@@ -1,13 +1,13 @@
-    /***************************************************************************
-    * @Name         : OSF_OpportunitySummarizeBatchClass
-    * @Description  : Summarize Opportunity Stage
-    * @Created By   : Vyankatesh Chinche
-    * @Created Date : Jun 09, 2022
-    * @Modification Log :
-    ****************************************************************************
-    * Version      Developer                Date        Description
-    *                                                       
-    ***************************************************************************/
+/***************************************************************************
+* @Name         : OSF_OpportunitySummarizeBatchClass
+* @Description  : Summarize Opportunity Stage
+* @Created By   : Vyankatesh Chinche
+* @Created Date : Jun 09, 2022
+* @Modification Log :
+****************************************************************************
+* Version      Developer                Date        Description
+*                                                       
+***************************************************************************/
 global with sharing class OSF_OpportunitySummarizeBatchClass implements Database.Batchable<sObject>,Database.Stateful,Schedulable {
     public static final String OPP_OPEN = 'Open';
     public static final String OPP_CLOSEWON = 'Closed Won';
@@ -20,7 +20,7 @@ global with sharing class OSF_OpportunitySummarizeBatchClass implements Database
     String openAmount;
     String closeWonAmount;
     String closeLostAmount;
-        /***********************************************************************
+    /***********************************************************************
 	* @Name         : start
 	* @Description  : Retrive Contact data from  database.
 	* @Created By   : Vyankatesh Chinche
