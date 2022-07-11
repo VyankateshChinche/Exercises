@@ -1,14 +1,14 @@
-    /***************************************************************************
-	*@Name         : OSF_CityWeatherConditionExtensionClass
-	*@Description  : Get the weather information of the associated City
-	*@Created By   : Vyankatesh Chinche
-	*@Created Date : Jun 14, 2022
-	*@Modification Log :
-	****************************************************************************
-	* Version      Developer                Date        Description
-	*---------------------------------------------------------------------------
-    *                                                       
-	***************************************************************************/
+/***************************************************************************
+*@Name         : OSF_CityWeatherConditionExtensionClass
+*@Description  : Get the weather information of the associated City
+*@Created By   : Vyankatesh Chinche
+*@Created Date : Jun 14, 2022
+*@Modification Log :
+****************************************************************************
+* Version      Developer                Date        Description
+*---------------------------------------------------------------------------
+*                                                       
+***************************************************************************/
 public with sharing class OSF_CityWeatherConditionExtensionClass {
     public static final String ACC_CITY = '?q='; 
     public static final String UNIT_METRIC = '&units=metric';
@@ -40,6 +40,7 @@ public with sharing class OSF_CityWeatherConditionExtensionClass {
             Http http = new Http();
             HttpRequest req = new HttpRequest();
             req.setEndpoint(EndPoint);
+            system.debug(EndPoint);
             req.setMethod(GET_METHOD);
             HTTPResponse response = http.send(req);
             if (response.getStatusCode() == 200) {
